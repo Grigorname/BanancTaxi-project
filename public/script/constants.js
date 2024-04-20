@@ -1,4 +1,4 @@
-// debugger;
+
 export const translates = {
     hy: {
         titleText: 'Yandex Taxi - Banants Taxi',

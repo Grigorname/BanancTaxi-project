@@ -1,5 +1,4 @@
 import { translates } from './constants.js';
-console.log(translates)
 
 function setLanguage(language) {
     document.getElementById('titleText').textContent = translates[language].titleText;
