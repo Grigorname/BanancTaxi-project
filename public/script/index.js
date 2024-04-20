@@ -65,4 +65,23 @@ window.onload = function() {
     });
 };
 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const buttonsContainer = document.querySelector('.buttons');
+
+    menuToggle.addEventListener('click', function() {
+        buttonsContainer.classList.toggle('active');
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutButton = document.getElementById('about-btn');
+    const aboutContent = document.getElementById('about-content');
+
+    aboutButton.addEventListener('click', function() {
+        // Переключение класса 'hidden' для контроля видимости элемента
+        aboutContent.classList.toggle('hidden');
+    });
+});
 

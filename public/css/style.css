@@ -1,12 +1,16 @@
-   body {
+* {
+     box-sizing: border-box;
+}
+body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    /* padding: 0; */
+    overflow-x: hidden; 
+    padding: 0;
 }
 
 /* лого */
 .logo-image {
-    width: 70px;
+    width: 70px;        
     height: auto;
     border-radius: 4px;
 }
@@ -15,30 +19,35 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; 
+    padding: 0; 
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
 }
-/* моя загаловка */
+
+/* моя заголовка */
 .title h1 {
     font-weight: 600;
     box-shadow: 3px 3px 3px rgba(16, 12, 12, 0.5);
     font-size: 24px;
 }
+
+
 /* мой лого banants taxi */
 .logo {
     margin-right: 20px;
-   
+    margin-left: 10px;
+}
+.hidden {
+    display: none;
 }
 /* контейнер для кнопок */
 .buttons {
-    margin-left: 20px;
     display: flex;
     align-items: center;
     flex-grow: 1;
+    margin-left: 20px;
 }
-.buttons.large-margin-left {
-    margin-left: 40px; /* Устанавливаем больший отступ */
-}
-/* мои кнопки */
 
 .buttons ul {
     list-style: none;
@@ -48,12 +57,13 @@
 }
 
 .buttons li {
-    margin-right: 30px;
+    margin-right: 27px;
 }
 
 .buttons li:last-child {
     margin-right: 0;
 }
+
 /* дизайн кнопок */
 .buttons button {
     padding: 15px 20px;
@@ -66,19 +76,15 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
-/* при нажати меняает цвет кнопки */
+
 .buttons button:hover {
     background-color: rgba(255, 223, 0, 0.8);
 }
 
-
-
-/* контейнер для номер телефона */
+/* контейнер для номера телефона */
 .contact-info {
     display: flex;
-    
-    flex-direction: column; 
-    align-items: flex-start;
+    flex-direction: column;
     align-items: center;
     margin-left: auto;
     margin-right: 20px;
@@ -91,72 +97,41 @@
 }
 
 .social-icons a.whatsapp {
-    color: #25D366; 
+    color: #25D366;
 }
 
 .social-icons a.viber {
-    color: #665CAC
+    color: #665CAC;
 }
-/* мои элементы при уменьшеном экране */
 
-/* текс привествие */
+/* текст приветствия */
 .warning_text {
-    text-align: center; 
-    font-family: 'Arial', sans-serif; 
-    font-size: 20px; 
-    font-weight: bold; 
-    margin: 20px 0; /* Добавляем отступы сверху и снизу */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
 }
-/* контейнер для привествия текста */
+
 #warning {
     display: block;
-    color: #211010; /* Задаем цвет текста */
-    font-size: 18px; /* Устанавливаем размер шрифта */
-    font-weight: normal; /* Настраиваем жирность текста */
-    text-align: center; /* Выравниваем текст по центру */
-    margin: 20px 0; /* Добавляем отступ сверху и снизу */
-    max-width: 600px; /* Максимальная ширина блока с текстом */
-    margin-left: auto; /* Выравнивание блока по центру с помощью авто-отступов */
-    margin-right: auto; /* Выравнивание блока по центру с помощью авто-отступов */
-    padding: 10px; /* Внутренние отступы */
-    border: 1px solid #f1f5f5; /* Тонкая граница вокруг блока с текстом */
-    border-radius: 4px; /* Скругление углов границы */
-    background-color: #f3f7f8; /* Цвет фона */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Тень блока */
-    transition: background-color 0.3s ease; /* Плавная анимация фона */
+    color: #211010;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #f1f5f5;
+    border-radius: 4px;
+    background-color: #f3f7f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    max-width: 90%;
 }
 
 #warning:hover {
-    background-color: #e8e8e8; /* Изменение цвета фона при наведении */
+    background-color: #e8e8e8;
 }
 
-    #warning {
-        font-size: 16px; /* Подстройте размер шрифта для мобильных устройств */
-        max-width: 90%; /* Меньше ширина блока, чтобы не касаться краев экрана */
-        margin: 20px auto; /* Верхний и нижний отступы, авто-отступы по бокам */
-        padding: 5px; /* Поддерживаем паддинги для внутреннего содержимого */
-    }
-
-    .language-selector {
-    margin-right: 20px;
-    border: 1px solid #ccc; /* Граница */
-    border-radius: 5px; /* Скругление углов */
-    background-color: #f8f8f8; /* Цвет фона */
-    padding: 5px; /* Внутренние отступы */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
-}
-
-.language-selector select {
-    border: none; /* Убираем стандартную границу */
-    background-color: transparent; /* Прозрачный фон */
-    padding: 5px; /* Внутренние отступы */
-    font-size: 16px; /* Размер шрифта */
-    cursor: pointer; /* Курсор в виде указателя */
-}
-
-.language-selector select:focus {
-    outline: none; /* Убираем контур фокуса */
-}
 .language-selector {
     margin-right: 20px;
     border: 1px solid #ccc;
@@ -165,139 +140,99 @@
     padding: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.language-selector:hover {
+    background-color: rgba(255, 223, 0, 0.8);
+}
+
+.language-selector select {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.language-selector select:focus {
+    outline: none;
+}
+
 .menu-toggle {
-    display: none; /* Скрываем кнопку меню по умолчанию */
+    display: none; 
     cursor: pointer;
     font-size: 24px;
 }
+
 .home_container {
     margin-bottom: 20px;
 }
- @media (max-width: 468px) {
-    .header {
-        position: relative;
-    }
 
-    .menu-toggle {
-        display: block;
-        margin-right: 10px;
-    }
 
-    .menu-toggle .fas {
-        font-size: 24px;
-    }
-
-    .buttons {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 100%; 
-        left: 0;
-        width: 100%; 
-        background-color: #fff; 
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
-        z-index: 999;
-        padding-left: 10px;
-    }
-
-    .buttons.active {
-        display: flex; 
-    }
-
-    .buttons ul {
-         flex-direction: column; 
-    }
-
-    .buttons li {
-        text-align: left; 
-        margin: 0; 
-    }
-
-    .buttons button {
-        width: calc(100% - 20px);
-        margin: 0; 
-        box-shadow: 1px 1px 1px 1px black; 
-    }
-}
-/* мой сектион почему у нас работать */
-
+/* Секция 'Почему у нас работать' */
 .question {
     box-shadow: 1px 2px 1px black;
 }
-
 
 h3 {
     text-align: center;
     font-size: 30px;
 }
+
 .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
-      background-color: rgba(174, 148, 109, 0.1);
-  }
-  .list {
+    background-color: rgba(174, 148, 109, 0.1);
+}
+
+.list {
     width: 45%;
-  }
-  .advantages, .disadvantages {
+}
+
+.advantages, .disadvantages {
     list-style: none;
     padding: 0;
-  }
-  .advantages li, .disadvantages li {
+}
+
+.advantages li, .disadvantages li {
     margin-bottom: 10px;
     padding-left: 30px;
     position: relative;
-  }
-  .advantages li::before, .disadvantages li::before {
+}
+
+.advantages li::before, .disadvantages li::before {
     content: '';
-    position: absolute;
+    position:absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 20px;
     height: 20px;
-  }
-  .advantages li::before {
     background-color: green;
     border-radius: 50%;
-  }
-  .disadvantages li::before {
-    background-color: green;
-    border-radius: 50%;
-  }
-
-  @media (max-width: 600px) {
-      #six {
-         overflow-wrap: break-word;
-      }
-  }
+}
 
 
-   @media (max-width: 900px) {
-      #six {
-         overflow-wrap: break-word;
-      }
-  }
-
-  .section {
+.section {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     margin: 30px;
 }
 
+
 .card {
     background: #FFFFFF;
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    width: 373px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 373px;
     overflow: hidden;
 }
 
 .car-image {
     width: 100%;
-    display: block; 
+    display: block;
 }
 
 .card-content {
@@ -306,7 +241,7 @@ h3 {
 }
 
 .card #Business {
-    color: #FFD700; 
+    color: #FFD700;
     font-size: 18px;
 }
 
@@ -316,16 +251,12 @@ h3 {
 }
 
 .car-details {
-    text-align: left;
-}
-
-.car_year, .car_akpp, .car_fuel, .car_conditioner, .car_camera, .car_control, .car_motor, .car_minimum, .car_deposite {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
 }
 
-#yearTitle, #akpp_title, #fuel_title, #conditioner_title, #camera_title, #control_title, #motor_title, #minimum_title, #deposite_title  {
+#yearTitle, #akpp_title, #fuel_title, #conditioner_title, #camera_title, #control_title, #motor_title, #minimum_title, #deposite_title {
     font-weight: bold;
 }
 
@@ -333,13 +264,131 @@ h3 {
     flex-grow: 1;
     text-align: right;
 }
+
 .price {
     background-color: rgba(255, 223, 0, 0.8);
     border-radius: 7px;
 }
+
 #price_title {
     color: black;
     font-size: 24px;
-    box-shadow: 0 2px  black;
+    box-shadow: 0 2px black;
     font-weight: 600;
+}
+/* Медиа-запросы для разных размеров экрана */
+@media (max-width: 900px) {
+    #six {
+        overflow-wrap: break-word;
+    }
+    .header {
+        justify-content: space-between;
+    }
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1000;
+    }
+    .language-selector {
+        margin-bottom: 15px; /* Меньший отступ для устройств с меньшим экраном */
+    }
+    .container, .section {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .title {
+        order: 1;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .buttons.active {
+        display: flex;
+    }
+    .home_container {
+        padding-top: 30px;
+    }
+    .title h1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+    }
+    .buttons {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 30%;
+        align-items: flex-start;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        overflow: auto;
+        z-index: 999;
+    }
+    .buttons button {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .buttons ul {
+        width: 90%;
+        flex-direction: column;
+    }
+    .buttons li {
+        width: 100%;
+        margin: 0;
+    }
+    .contact-info {
+        border: 1px solid black;
+        background-color: rgba(255, 254, 251, 0.8) ;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 430px) {
+    .card-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    .language-selector, .contact-info {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 414px) {
+    .card-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .card {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+}
+
+@media (max-width: 375px) {
+    .card-container {
+        display: flex;
+        justify-content: space-around;
+    }
+    .card {
+        width: 90%;
+    }
 }
