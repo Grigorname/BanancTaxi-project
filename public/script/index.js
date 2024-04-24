@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const aboutContent = document.getElementById('about-content');
 
     aboutButton.addEventListener('click', function() {
+
         aboutContent.classList.toggle('hidden');
     });
 });
