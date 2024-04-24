@@ -34,7 +34,35 @@ function setLanguage(language) {
     document.getElementById('akpp_info').textContent = translates[language].akpp_info;
     document.getElementById('yearTitle').textContent = translates[language].yearTitle;
     document.getElementById('price_title').innerHTML = translates[language].price_title;
-    // Остальные элементы...
+    document.getElementById('yearTitleElantra').textContent = translates[language].yearTitleElantra;
+    document.getElementById('akpp_infoElantra').textContent = translates[language].akpp_infoElantra;
+    document.getElementById('motor_titleElantra').textContent = translates[language].motor_titleElantra;  
+    document.getElementById('fuel_titleElantra').textContent = translates[language].fuel_titleElantra; 
+    document.getElementById('fuel_infoElantra').textContent = translates[language].fuel_infoElantra;
+    document.getElementById('minimum_titleElantra').textContent = translates[language].minimum_titleElantra; 
+    document.getElementById('minimum_infoElantra').textContent = translates[language].minimum_infoElantra;  
+    document.getElementById('deposite_titleElantra').textContent = translates[language].deposite_titleElantra;
+    document.getElementById('conditioner_titleElantra').textContent = translates[language].conditioner_titleElantra;
+    document.getElementById('conditioner_infoElantra').textContent = translates[language].conditioner_infoElantra;
+    document.getElementById('camera_titleElantra').textContent = translates[language].camera_titleElantra;
+    document.getElementById('camera_infoElantra').textContent = translates[language].camera_infoElantra; 
+    document.getElementById('control_titleElantra').textContent = translates[language].control_titleElantra;
+    document.getElementById('control_infoElantra').textContent = translates[language].control_infoElantra;
+    document.getElementById('price_titleElantra').innerHTML = translates[language].price_titleElantra;
+    document.getElementById('yearTitleKia').textContent = translates[language].yearTitleKia;
+    document.getElementById('akpp_infoKia').textContent = translates[language].akpp_infoKia;
+    document.getElementById('motor_titleKia').textContent = translates[language].motor_titleKia;
+    document.getElementById('fuel_titleKia').textContent = translates[language].fuel_titleKia;
+    document.getElementById('fuel_infoKia').textContent = translates[language].fuel_infoKia;
+    document.getElementById('minimum_titleKia').textContent = translates[language].minimum_titleKia;
+    document.getElementById('minimum_infoKia').textContent = translates[language].minimum_infoKia;
+    document.getElementById('deposite_titleKia').textContent = translates[language].deposite_titleKia;
+    document.getElementById('conditioner_titleKia').textContent = translates[language].conditioner_titleKia;
+    document.getElementById('conditioner_infoKia').textContent = translates[language].conditioner_infoKia;
+    document.getElementById('camera_titleKia').textContent = translates[language].camera_titleKia; 
+    document.getElementById('control_titleKia').textContent = translates[language].control_titleKia; 
+    document.getElementById('control_infoKia').textContent = translates[language].control_infoKia; 
+    document.getElementById('price_titleKia').innerHTML = translates[language].price_titleKia;
 }
 
 

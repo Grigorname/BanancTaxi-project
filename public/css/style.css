@@ -8,21 +8,21 @@ body {
     padding: 0;
 }
 
-/* лого */
+/* лого */ 
 .logo-image {
-    width: 70px;        
-    height: auto;
+     width: 70px;        
+    height: auto; 
     border-radius: 4px;
-}
+} 
 
 .header {
     display: flex;
-    align-items: center;
+     align-items: center; 
     justify-content: space-between;
-    padding: 0; 
+    padding: 0;  
     max-width: 100%;
     margin: 0;
-    text-align: center;
+     text-align: center;
 }
 
 /* моя заголовка */
@@ -216,11 +216,10 @@ h3 {
 
 .section {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 40px;
     margin: 30px;
 }
-
 
 .card {
     background: #FFFFFF;
@@ -233,6 +232,8 @@ h3 {
 .car-image {
     width: 100%;
     display: block;
+    height: 300px;
+    object-fit: cover;
 }
 
 .card-content {
@@ -240,7 +241,7 @@ h3 {
     text-align: center;
 }
 
-.card #Business {
+.card .taxiBusiness {
     color: #FFD700;
     font-size: 18px;
 }
@@ -252,15 +253,25 @@ h3 {
 
 .car-details {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
+    flex-direction: column;
 }
 
-#yearTitle, #akpp_title, #fuel_title, #conditioner_title, #camera_title, #control_title, #motor_title, #minimum_title, #deposite_title {
+.car-details > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.car-details > div > span {
     font-weight: bold;
 }
 
-#year-info, #akpp_info, #fuel_info, #conditioner_info, #camera_info, #control_info, #motor_info, #minimum_info, #deposite_info {
+.car-details > div > span:last-child {
     flex-grow: 1;
     text-align: right;
 }
@@ -268,14 +279,27 @@ h3 {
 .price {
     background-color: rgba(255, 223, 0, 0.8);
     border-radius: 7px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #price_title {
     color: black;
     font-size: 24px;
-    box-shadow: 0 2px black;
     font-weight: 600;
 }
+#price_titleElantra {
+     color: black;
+    font-size: 24px;
+    font-weight: 600;
+}
+#price_titleKia {
+    color: black;
+    font-size: 24px;
+    font-weight: 600;  
+}
+
 /* Медиа-запросы для разных размеров экрана */
 @media (max-width: 900px) {
     #six {
