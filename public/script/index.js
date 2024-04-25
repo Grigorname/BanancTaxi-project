@@ -84,15 +84,30 @@ function setWarningText() {
     addLetter();
 }
 
-window.onload = function() {
-    setWarningText();
+document.addEventListener('DOMContentLoaded', function() {
+    setWarningText(); // Вызов функции внутри обработчика событий DOMContentLoaded
+
     const languageSelect = document.getElementById('languageSelect');
     languageSelect.addEventListener('change', function() {
         setLanguage(this.value);
     });
-};
 
-document.addEventListener('DOMContentLoaded', function() {
+    const languageSelector = document.getElementById('languageSelect');
+    const dropdownContent = languageSelector.querySelector('.dropdown-content');
+    const selectedLang = languageSelector.querySelector('.selected-lang');
+
+    dropdownContent.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function() {
+            selectedLang.innerHTML = this.innerHTML; // Обновляет выбранный язык с флагом
+            setLanguage(this.getAttribute('data-value'));
+            dropdownContent.classList.add('hidden'); // Скрывает дропдаун после выбора
+        });
+    });
+
+    selectedLang.addEventListener('click', function() {
+        dropdownContent.classList.toggle('hidden'); // Показывает или скрывает дропдаун
+    });
+
     const menuToggle = document.querySelector('.menu-toggle');
     const buttonsContainer = document.querySelector('.buttons');
 
@@ -102,13 +117,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const aboutButton = document.getElementById('about-btn');
-    const aboutContent = document.getElementById('about-content');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const aboutButton = document.getElementById('about-btn');
+//     const aboutContent = document.getElementById('about-content');
 
-    aboutButton.addEventListener('click', function() {
+//     aboutButton.addEventListener('click', function() {
 
-        aboutContent.classList.toggle('hidden');
-    });
-});
+//         aboutContent.classList.toggle('hidden');
+//     });
+// });
 

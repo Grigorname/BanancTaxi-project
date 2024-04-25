@@ -26,12 +26,20 @@
             </ul>
         </div>
         <div class="language-selector">
-            <select id="languageSelect">
-                <option value="hy" >Հայերեն</option>
-                <option value="ru">Русский</option>
-                <option value="en">English</option>
-            </select>
+    <div id="languageSelect" class="dropdown-selector">
+        <div class="selected-lang">
+            <span class="flag"><img src="./public/img/flag-Armenia2048x1024.jpg" alt="Հայերեն"></span>
+            <span class="lang-text">Հայերեն</span>
         </div>
+        <div class="dropdown-content hidden">
+            <div class="dropdown-item" data-value="hy"><img src="./public/img/flag-Armenia2048x1024.jpg" alt="Հայերեն"> Հայերեն</div>
+            <div class="dropdown-item" data-value="ru"><img src="./public/img/russia-flag.png" alt="Русский"> Русский</div>
+            <div class="dropdown-item" data-value="en"><img src="./public/img/united-states-large.png" alt="English"> English</div>
+        </div>
+    </div>
+</div>
+
+       
         <div class="contact-info">
             <div class="social-icons">
                 <a href="https://wa.me/+37477636706" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
