@@ -85,45 +85,35 @@ function setWarningText() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    setWarningText(); // Вызов функции внутри обработчика событий DOMContentLoaded
-
-    const languageSelect = document.getElementById('languageSelect');
-    languageSelect.addEventListener('change', function() {
-        setLanguage(this.value);
-    });
+    setWarningText(); 
 
     const languageSelector = document.getElementById('languageSelect');
     const dropdownContent = languageSelector.querySelector('.dropdown-content');
     const selectedLang = languageSelector.querySelector('.selected-lang');
 
+    // Обработчик клика по элементам языкового списка.
     dropdownContent.querySelectorAll('.dropdown-item').forEach(item => {
         item.addEventListener('click', function() {
-            selectedLang.innerHTML = this.innerHTML; // Обновляет выбранный язык с флагом
-            setLanguage(this.getAttribute('data-value'));
-            dropdownContent.classList.add('hidden'); // Скрывает дропдаун после выбора
+            selectedLang.innerHTML = this.innerHTML; 
+            setLanguage(this.getAttribute('data-value')); 
+            dropdownContent.classList.add('hidden');
         });
     });
 
+    // Переключение видимости выпадающего списка языков.
     selectedLang.addEventListener('click', function() {
-        dropdownContent.classList.toggle('hidden'); // Показывает или скрывает дропдаун
+        dropdownContent.classList.toggle('hidden'); 
     });
 
+    // Для переключения меню на мобильных устройствах.
     const menuToggle = document.querySelector('.menu-toggle');
     const buttonsContainer = document.querySelector('.buttons');
-
     menuToggle.addEventListener('click', function() {
-        buttonsContainer.classList.toggle('active');
+        buttonsContainer.classList.toggle('active'); 
     });
 });
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const aboutButton = document.getElementById('about-btn');
-//     const aboutContent = document.getElementById('about-content');
 
-//     aboutButton.addEventListener('click', function() {
 
-//         aboutContent.classList.toggle('hidden');
-//     });
-// });
 

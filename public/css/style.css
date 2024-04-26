@@ -1,5 +1,5 @@
 * {
-     box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
     font-family: 'Arial', sans-serif;
@@ -8,42 +8,33 @@ body {
     padding: 0;
 }
 
-/* лого */ 
-.logo-image {
-     width: 70px;        
-    height: auto; 
-    border-radius: 4px;
-} 
-
 .header {
     display: flex;
-     align-items: center; 
+    align-items: center;
     justify-content: space-between;
-    padding: 0;  
+    padding: 0;
     max-width: 100%;
     margin: 0;
-     text-align: center;
+    text-align: center;
 }
 
-/* моя заголовка */
+.logo-image {
+    width: 70px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.logo {
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
 .title h1 {
     font-weight: 600;
     box-shadow: 3px 3px 3px rgba(16, 12, 12, 0.5);
     font-size: 24px;
 }
 
-
-
-
-/* мой лого banants taxi */
-.logo {
-    margin-right: 20px;
-    margin-left: 10px;
-}
-.hidden {
-    display: none;
-}
-/* контейнер для кнопок */
 .buttons {
     display: flex;
     align-items: center;
@@ -66,7 +57,6 @@ body {
     margin-right: 0;
 }
 
-/* дизайн кнопок */
 .buttons button {
     padding: 15px 20px;
     font-size: 16px;
@@ -83,7 +73,6 @@ body {
     background-color: rgba(255, 223, 0, 0.8);
 }
 
-/* контейнер для номера телефона */
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -92,7 +81,6 @@ body {
     margin-right: 20px;
 }
 
-/* иконки номеров */
 .social-icons a {
     font-size: 24px;
     margin-right: 10px;
@@ -113,7 +101,8 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin: 20px 0;
-}
+} 
+
 
 #warning {
     display: block;
@@ -154,7 +143,7 @@ body {
     position: relative;
     display: inline-block;
     cursor: pointer;
-    margin-left: 20px; /* Устанавливаете отступ слева, если нужно */
+    margin-left: 20px; 
 }
 
 .selected-lang, .dropdown-content div {
@@ -164,8 +153,8 @@ body {
 }
 
 .selected-lang img, .dropdown-content img {
-    width: 20px; /* Устанавливаете ширину изображений флагов */
-    height: auto; /* Высота автоматически подстраивается */
+    width: 20px; 
+    height: auto; 
     margin-right: 8px;
 }
 
@@ -175,8 +164,8 @@ body {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    display: none; /* Скрыто по умолчанию */
-    right: 0; /* Позиционирование справа, если нужно */
+    display: none; 
+    right: 0; 
 }
 
 .dropdown-content .dropdown-item:hover {
@@ -184,7 +173,7 @@ body {
 }
 
 .dropdown-selector:hover .dropdown-content {
-    display: block; /* Отображается при наведении */
+    display: block; 
 }
 
 
@@ -337,6 +326,9 @@ h3 {
         top: 10px;
         z-index: 1000;
     }
+    .hidden {
+    display: none;
+}
 
     .container, .section {
         display: flex;
@@ -411,14 +403,19 @@ h3 {
         align-items: center;
         width: 90%;
     }
+    .hidden {
+    display: none;
+}
        .language-selector {
-        margin-right: 20px; /* Добавляет отступ снизу для .language-selector */
+        margin-right: 20px; 
     }
     .contact-info {
-        margin-right: 20px; /* Добавляет отступ сверху для .contact-info, если необходимо */
+        margin-right: 20px; 
     }
    
 }
+
+
 
 @media (max-width: 414px) {
     .card-container {
@@ -431,6 +428,9 @@ h3 {
         align-items: center;
         width: 90%;
     }
+    .hidden {
+    display: none;
+}
 }
 
 @media (max-width: 375px) {
@@ -448,6 +448,9 @@ h3 {
     .contact-info {
         margin-right: 10px;
     }
+    .hidden {
+    display: none;
+}
     
   
 }
