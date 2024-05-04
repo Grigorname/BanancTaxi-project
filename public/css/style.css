@@ -129,6 +129,19 @@ body {
     cursor: pointer;
     font-size: 24px;
 }
+/* менью кнопка X  */
+.menu-toggle .fa-times {
+    display: none; /* Скрываем иконку 'X' по умолчанию */
+}
+
+.menu-toggle.active .fa-bars {
+    display: none; /* Скрываем иконку бургера, когда меню активно */
+}
+
+.menu-toggle.active .fa-times {
+    display: block; /* Показываем иконку 'X', когда меню активно */
+}
+
 
 
     .home_container {
@@ -174,6 +187,9 @@ body {
 
 .dropdown-selector:hover .dropdown-content {
     display: block; 
+}
+.dropdown-item {
+    cursor: pointer;
 }
 
 
@@ -355,6 +371,17 @@ h3 {
         transform: translateX(-50%);
         width: calc(100% - 40px);
     }
+    .fa-times {
+    display: none; /* Скрываем иконку 'X' по умолчанию */
+}
+
+.menu-toggle.active .fa-bars {
+    display: none; /* Скрывает иконку бургера, когда меню активно */
+}
+
+.menu-toggle.active .fa-times {
+    display: block; /* Показываем иконку 'X', когда меню активно */
+}
     .buttons {
         display: none;
         flex-direction: column;

@@ -60,8 +60,9 @@ function setLanguage(language) {
     document.getElementById('conditioner_titleKia').textContent = translates[language].conditioner_titleKia;
     document.getElementById('conditioner_infoKia').textContent = translates[language].conditioner_infoKia;
     document.getElementById('camera_titleKia').textContent = translates[language].camera_titleKia; 
-    document.getElementById('control_titleKia').textContent = translates[language].control_titleKia; 
-    document.getElementById('control_infoKia').textContent = translates[language].control_infoKia; 
+    document.getElementById('control_titleKia').textContent = translates[language].control_titleKia;
+    document.getElementById('camera_infoKia').textContent = translates[language].camera_infoKia;  
+    document.getElementById('control_infoKia').textContent = translates[language].control_infoKia;
     document.getElementById('price_titleKia').innerHTML = translates[language].price_titleKia;
 }
 
@@ -85,35 +86,41 @@ function setWarningText() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    setWarningText(); 
+    setWarningText();
 
     const languageSelector = document.getElementById('languageSelect');
-    const dropdownContent = languageSelector.querySelector('.dropdown-content');
-    const selectedLang = languageSelector.querySelector('.selected-lang');
-
-    // Обработчик клика по элементам языкового списка.
-    dropdownContent.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('click', function() {
-            selectedLang.innerHTML = this.innerHTML; 
-            setLanguage(this.getAttribute('data-value')); 
-            dropdownContent.classList.add('hidden');
-        });
+    languageSelector.addEventListener('click', function(event) {
+        const target = event.target.closest('.dropdown-item');
+        if (target) {
+            const lang = target.getAttribute('data-value');
+            setLanguage(lang);
+            languageSelector.querySelector('.selected-lang').innerHTML = target.innerHTML;
+            languageSelector.querySelector('.dropdown-content').classList.add('hidden');
+        }
     });
 
-    // Переключение видимости выпадающего списка языков.
-    selectedLang.addEventListener('click', function() {
-        dropdownContent.classList.toggle('hidden'); 
-    });
-
-    // Для переключения меню на мобильных устройствах.
     const menuToggle = document.querySelector('.menu-toggle');
     const buttonsContainer = document.querySelector('.buttons');
-    menuToggle.addEventListener('click', function() {
-        buttonsContainer.classList.toggle('active'); 
+    const burgerIcon = document.querySelector('.fa-bars');
+    const closeIcon = document.querySelector('.fa-times');
+
+    function toggleMenu() {
+        buttonsContainer.classList.toggle('active');
+        burgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    }
+
+    menuToggle.addEventListener('click', function(event) {
+        event.stopPropagation();
+        toggleMenu();
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && buttonsContainer.classList.contains('active')) {
+            toggleMenu();
+        }
     });
 });
-
-
 
 
 
