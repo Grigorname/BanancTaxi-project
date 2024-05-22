@@ -1,93 +1,117 @@
 import { translates } from './constants.js';
 
+let currentLanguage = 'hy'; 
+let isWarningTextSet = false; 
+let isWarningAnimationRunning = false; 
+
 function setLanguage(language) {
+    currentLanguage = language; 
+
     document.getElementById('titleText').textContent = translates[language].titleText;
     document.getElementById('about-btn').querySelector('button').textContent = translates[language].aboutBtn;
     document.getElementById('rental-btn').querySelector('button').textContent = translates[language].rentalBtn;
     document.getElementById('services-btn').querySelector('button').textContent = translates[language].servicesBtn;
-    document.getElementById('warning').textContent = translates[language].warningText;
-    document.querySelector('#question_text h3').textContent = translates[language].questionText;
-    document.getElementById('one').textContent = translates[language].one_text;
-    document.getElementById('tree').textContent = translates[language].tree_text;
-    document.getElementById('five').textContent = translates[language].five_text;
-    document.getElementById('four').textContent = translates[language].four_text;
-    document.getElementById('six').textContent = translates[language].six_text;
-    document.getElementById('seven').textContent = translates[language].seven_text;
-    document.getElementById('eight').textContent = translates[language].eight_text;
-    document.getElementById('nine').textContent = translates[language].nine_text;
-    document.getElementById('ten').textContent = translates[language].ten_text;
-    document.getElementById('twoo').textContent = translates[language].twoo_text;
-    document.getElementById('motor_title').textContent = translates[language].motor_title;
-    document.getElementById('motor_info').textContent = translates[language].motor_info;
-    document.getElementById('fuel_title').textContent = translates[language].fuel_title;
-    document.getElementById('fuel_info').textContent = translates[language].fuel_info;
-    document.getElementById('minimum_title').textContent = translates[language].minimum_title;
-    document.getElementById('minimum_info').textContent = translates[language].minimum_info;
-    document.getElementById('deposite_title').textContent = translates[language].deposite_title;
-    document.getElementById('deposite_info').textContent = translates[language].deposite_info;
-    document.getElementById('conditioner_title').textContent = translates[language].conditioner_title;
-    document.getElementById('conditioner_info').textContent = translates[language].conditioner_info;
-    document.getElementById('camera_title').textContent = translates[language].camera_title;
-    document.getElementById('camera_info').textContent = translates[language].camera_info;
-    document.getElementById('control_title').textContent = translates[language].control_title;
-    document.getElementById('control_info').textContent = translates[language].control_info;
-    document.getElementById('akpp_info').textContent = translates[language].akpp_info;
-    document.getElementById('yearTitle').textContent = translates[language].yearTitle;
-    document.getElementById('price_title').innerHTML = translates[language].price_title;
-    document.getElementById('yearTitleElantra').textContent = translates[language].yearTitleElantra;
-    document.getElementById('akpp_infoElantra').textContent = translates[language].akpp_infoElantra;
-    document.getElementById('motor_titleElantra').textContent = translates[language].motor_titleElantra;  
-    document.getElementById('fuel_titleElantra').textContent = translates[language].fuel_titleElantra; 
-    document.getElementById('fuel_infoElantra').textContent = translates[language].fuel_infoElantra;
-    document.getElementById('minimum_titleElantra').textContent = translates[language].minimum_titleElantra; 
-    document.getElementById('minimum_infoElantra').textContent = translates[language].minimum_infoElantra;  
-    document.getElementById('deposite_titleElantra').textContent = translates[language].deposite_titleElantra;
-    document.getElementById('conditioner_titleElantra').textContent = translates[language].conditioner_titleElantra;
-    document.getElementById('conditioner_infoElantra').textContent = translates[language].conditioner_infoElantra;
-    document.getElementById('camera_titleElantra').textContent = translates[language].camera_titleElantra;
-    document.getElementById('camera_infoElantra').textContent = translates[language].camera_infoElantra; 
-    document.getElementById('control_titleElantra').textContent = translates[language].control_titleElantra;
-    document.getElementById('control_infoElantra').textContent = translates[language].control_infoElantra;
-    document.getElementById('price_titleElantra').innerHTML = translates[language].price_titleElantra;
-    document.getElementById('yearTitleKia').textContent = translates[language].yearTitleKia;
-    document.getElementById('akpp_infoKia').textContent = translates[language].akpp_infoKia;
-    document.getElementById('motor_titleKia').textContent = translates[language].motor_titleKia;
-    document.getElementById('fuel_titleKia').textContent = translates[language].fuel_titleKia;
-    document.getElementById('fuel_infoKia').textContent = translates[language].fuel_infoKia;
-    document.getElementById('minimum_titleKia').textContent = translates[language].minimum_titleKia;
-    document.getElementById('minimum_infoKia').textContent = translates[language].minimum_infoKia;
-    document.getElementById('deposite_titleKia').textContent = translates[language].deposite_titleKia;
-    document.getElementById('conditioner_titleKia').textContent = translates[language].conditioner_titleKia;
-    document.getElementById('conditioner_infoKia').textContent = translates[language].conditioner_infoKia;
-    document.getElementById('camera_titleKia').textContent = translates[language].camera_titleKia; 
-    document.getElementById('control_titleKia').textContent = translates[language].control_titleKia;
-    document.getElementById('camera_infoKia').textContent = translates[language].camera_infoKia;  
-    document.getElementById('control_infoKia').textContent = translates[language].control_infoKia;
-    document.getElementById('price_titleKia').innerHTML = translates[language].price_titleKia;
-}
 
-
-
-
-function setWarningText() {
-    const warningTextElement = document.getElementById('warning');
-    const text = translates['hy'].warningText;
-    let index = 0;
-
-    function addLetter() {
-        if (index < text.length) {
-            warningTextElement.textContent += text[index];
-            index++;
-            setTimeout(addLetter, 40);
-        }
+    const questionTextElement = document.querySelector('#question_text h3');
+    if (questionTextElement) {
+        questionTextElement.textContent = translates[language].questionText;
     }
 
-    addLetter();
+    const elementsToTranslate = [
+        { id: 'one', key: 'one_text' },
+        { id: 'tree', key: 'tree_text' },
+        { id: 'five', key: 'five_text' },
+        { id: 'four', key: 'four_text' },
+        { id: 'six', key: 'six_text' },
+        { id: 'seven', key: 'seven_text' },
+        { id: 'eight', key: 'eight_text' },
+        { id: 'nine', key: 'nine_text' },
+        { id: 'ten', key: 'ten_text' },
+        { id: 'twoo', key: 'twoo_text' },
+        { id: 'motor_title', key: 'motor_title' },
+        { id: 'motor_info', key: 'motor_info' },
+        { id: 'fuel_title', key: 'fuel_title' },
+        { id: 'fuel_info', key: 'fuel_info' },
+        { id: 'minimum_title', key: 'minimum_title' },
+        { id: 'minimum_info', key: 'minimum_info' },
+        { id: 'deposite_title', key: 'deposite_title' },
+        { id: 'deposite_info', key: 'deposite_info' },
+        { id: 'conditioner_title', key: 'conditioner_title' },
+        { id: 'conditioner_info', key: 'conditioner_info' },
+        { id: 'camera_title', key: 'camera_title' },
+        { id: 'camera_info', key: 'camera_info' },
+        { id: 'control_title', key: 'control_title' },
+        { id: 'control_info', key: 'control_info' },
+        { id: 'akpp_info', key: 'akpp_info' },
+        { id: 'yearTitle', key: 'yearTitle' },
+        { id: 'price_title', key: 'price_title' },
+        { id: 'yearTitleElantra', key: 'yearTitleElantra' },
+        { id: 'akpp_infoElantra', key: 'akpp_infoElantra' },
+        { id: 'motor_titleElantra', key: 'motor_titleElantra' },
+        { id: 'fuel_titleElantra', key: 'fuel_titleElantra' },
+        { id: 'fuel_infoElantra', key: 'fuel_infoElantra' },
+        { id: 'minimum_titleElantra', key: 'minimum_titleElantra' },
+        { id: 'minimum_infoElantra', key: 'minimum_infoElantra' },
+        { id: 'deposite_titleElantra', key: 'deposite_titleElantra' },
+        { id: 'conditioner_titleElantra', key: 'conditioner_titleElantra' },
+        { id: 'conditioner_infoElantra', key: 'conditioner_infoElantra' },
+        { id: 'camera_titleElantra', key: 'camera_titleElantra' },
+        { id: 'camera_infoElantra', key: 'camera_infoElantra' },
+        { id: 'control_titleElantra', key: 'control_titleElantra' },
+        { id: 'control_infoElantra', key: 'control_infoElantra' },
+        { id: 'price_titleElantra', key: 'price_titleElantra' },
+        { id: 'yearTitleKia', key: 'yearTitleKia' },
+        { id: 'akpp_infoKia', key: 'akpp_infoKia' },
+        { id: 'motor_titleKia', key: 'motor_titleKia' },
+        { id: 'fuel_titleKia', key: 'fuel_titleKia' },
+        { id: 'fuel_infoKia', key: 'fuel_infoKia' },
+        { id: 'minimum_titleKia', key: 'minimum_titleKia' },
+        { id: 'minimum_infoKia', key: 'minimum_infoKia' },
+        { id: 'deposite_titleKia', key: 'deposite_titleKia' },
+        { id: 'conditioner_titleKia', key: 'conditioner_titleKia' },
+        { id: 'conditioner_infoKia', key: 'conditioner_infoKia' },
+        { id: 'camera_titleKia', key: 'camera_titleKia' },
+        { id: 'camera_infoKia', key: 'camera_infoKia' },
+        { id: 'control_titleKia', key: 'control_titleKia' },
+        { id: 'control_infoKia', key: 'control_infoKia' },
+        { id: 'price_titleKia', key: 'price_titleKia' }
+    ];
+
+    elementsToTranslate.forEach(item => {
+        const element = document.getElementById(item.id);
+        if (element) {
+            element.innerHTML = translates[language][item.key];
+        }
+    });
+}
+
+function setWarningText(language) {
+    const warningTextElement = document.getElementById('warning');
+    if (warningTextElement && !isWarningAnimationRunning) {
+        isWarningAnimationRunning = true; 
+        const text = translates[language].warningText;
+    
+        let index = 0;
+        warningTextElement.textContent = ''; 
+
+        function addLetter() {
+            if (index < text.length) {
+                warningTextElement.textContent += text[index];
+                index++;
+                setTimeout(addLetter, 30);
+            } else {
+                isWarningTextSet = true; 
+                isWarningAnimationRunning = false; 
+            }
+        }
+
+        if (!isWarningTextSet) {
+            addLetter();
+        }
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    setWarningText();
-
     const languageSelector = document.getElementById('languageSelect');
     languageSelector.addEventListener('click', function(event) {
         const target = event.target.closest('.dropdown-item');
@@ -96,6 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
             setLanguage(lang);
             languageSelector.querySelector('.selected-lang').innerHTML = target.innerHTML;
             languageSelector.querySelector('.dropdown-content').classList.add('hidden');
+            isWarningTextSet = false; 
+            setWarningText(lang); 
         }
     });
 
@@ -120,7 +146,36 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleMenu();
         }
     });
+
+    const loadContent = (url, language) => {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content').innerHTML = data;
+                setLanguage(language); 
+                setWarningText(language); 
+            })
+            .catch(error => console.error('Error loading content:', error));
+    };
+
+    const showAllContent = (language) => {
+        const about = fetch('./public/about.html').then(response => response.text());
+        const rental = fetch('./public/rental.html').then(response => response.text());
+        const services = fetch('./public/services.html').then(response => response.text());
+
+        Promise.all([about, rental, services])
+            .then(contents => {
+                document.getElementById('content').innerHTML = contents.join('<hr>');
+                setLanguage(language); 
+                setWarningText(language); 
+            })
+            .catch(error => console.error('Error loading content:', error));
+    };
+
+    document.getElementById('about-btn').addEventListener('click', () => loadContent('./public/about.html', currentLanguage));
+    document.getElementById('rental-btn').addEventListener('click', () => loadContent('./public/rental.html', currentLanguage));
+    document.getElementById('services-btn').addEventListener('click', () => loadContent('./public/services.html', currentLanguage));
+
+    
+    showAllContent(currentLanguage);
 });
-
-
-

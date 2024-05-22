@@ -212,6 +212,7 @@ h3 {
     background-color: rgba(174, 148, 109, 0.1);
 }
 
+
 .list {
     width: 45%;
 }
@@ -371,16 +372,21 @@ h3 {
         transform: translateX(-50%);
         width: calc(100% - 40px);
     }
+     .fa-bars.hidden,
+    .fa-times.hidden {
+        display: none;
+    }
+
     .fa-times {
-    display: none; /* Скрываем иконку 'X' по умолчанию */
+    display: none; 
 }
 
 .menu-toggle.active .fa-bars {
-    display: none; /* Скрывает иконку бургера, когда меню активно */
+    display: none; 
 }
 
 .menu-toggle.active .fa-times {
-    display: block; /* Показываем иконку 'X', когда меню активно */
+    display: block; 
 }
     .buttons {
         display: none;
@@ -410,7 +416,10 @@ h3 {
         width: 100%;
         margin: 0;
     }
-  
+   .buttons.active {
+        display: flex;
+    }
+
       .section {
         display: flex;
         flex-direction: column;
