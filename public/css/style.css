@@ -27,6 +27,7 @@ body {
 .logo {
     margin-right: 20px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .title h1 {
@@ -131,15 +132,15 @@ body {
 }
 /* менью кнопка X  */
 .menu-toggle .fa-times {
-    display: none; /* Скрываем иконку 'X' по умолчанию */
+    display: none; 
 }
 
 .menu-toggle.active .fa-bars {
-    display: none; /* Скрываем иконку бургера, когда меню активно */
+    display: none; 
 }
 
 .menu-toggle.active .fa-times {
-    display: block; /* Показываем иконку 'X', когда меню активно */
+    display: block; 
 }
 
 
@@ -240,19 +241,25 @@ h3 {
     border-radius: 50%;
 }
 
-
 .section {
     display: flex;
+    flex-wrap: wrap; 
     justify-content: space-between;
     gap: 40px;
     margin: 30px;
+}
+
+.card-container {
+    flex: 1 1 300px;
+    max-width: 400px; 
+    margin: 10px; 
 }
 
 .card {
     background: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: 373px;
+    width: 100%; 
     overflow: hidden;
 }
 
@@ -266,6 +273,17 @@ h3 {
 .card-content {
     padding: 20px;
     text-align: center;
+}
+
+.car-details > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card .taxiBusiness {
@@ -283,16 +301,6 @@ h3 {
     flex-direction: column;
 }
 
-.car-details > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 10px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 .car-details > div > span {
     font-weight: bold;
@@ -326,7 +334,21 @@ h3 {
     font-size: 24px;
     font-weight: 600;
 }
-
+#price_titleSentra {
+    color: black;
+    font-size: 24px;
+    font-weight: 600; 
+}
+#price_titleTida {
+     color: black;
+    font-size: 24px;
+    font-weight: 600; 
+}
+#price_titleLogan {
+      color: black;
+    font-size: 24px;
+    font-weight: 600; 
+}
 
 /* Медиа-запросы для разных размеров экрана */
 @media (max-width: 900px) {
@@ -371,6 +393,7 @@ h3 {
         left: 50%;
         transform: translateX(-50%);
         width: calc(100% - 40px);
+         margin-top: 10px;
     }
      .fa-bars.hidden,
     .fa-times.hidden {
@@ -426,6 +449,7 @@ h3 {
         align-items: center;
         gap: 20px; 
     }
+  
 }
 
 @media (min-width: 414px) and (max-width: 430px) {

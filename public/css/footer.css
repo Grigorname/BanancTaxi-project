@@ -1,0 +1,50 @@
+
+        .services-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .services-container h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .services-container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services-container ul li {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .footer {
+            background-color: #74992e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer .social-icons {
+            margin: 20px 0;
+        }
+
+        .footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .footer .contact-info {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        .footer .contact-info p {
+            margin: 5px 0;
+        }
